@@ -16,7 +16,7 @@ const ViewMode: React.FC<Props> = ({
   cleanSelectedPokemons,
   setComparisonChart,
   showChart,
-}) => {
+}):JSX.Element => {
   const cleanPokemonArray = (): void => {
     setShow ? viewState : Boolean;
     cleanSelectedPokemons();
@@ -81,7 +81,7 @@ const mapDispatchToProps = (
         payload: { actualState: boolean };
       }) => void
     ): void;
-  }) => any
+  }) => void
 ) => {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),

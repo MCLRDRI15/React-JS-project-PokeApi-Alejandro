@@ -11,7 +11,7 @@ const ShowPokemonData: React.FC<Props> = ({
   pokemonInPokeball,
   singleView,
   cleanPokemonArray,
-}) => {
+}):JSX.Element => {
   return (
     <div
       className={

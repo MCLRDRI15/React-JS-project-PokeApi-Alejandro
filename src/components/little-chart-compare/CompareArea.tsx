@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import {Props} from "../components/interfaces-folder/Compare";
 
-const ToastComponent: React.FC<Props> = ({ pokemonInPokeball, showChart }) => {
+const ToastComponent: React.FC<Props> = ({ pokemonInPokeball, showChart }):JSX.Element => {
   const [pokemonName, setPokemonName] = useState();
 
   useEffect(() => {

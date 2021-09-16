@@ -9,7 +9,7 @@ const ShowPokemonCompare: React.FC<Props> = ({
   pokemonInPokeball,
   viewState,
   cleanPokemonArray,
-}) => (
+}):JSX.Element => (
   <div
     className={
       viewState

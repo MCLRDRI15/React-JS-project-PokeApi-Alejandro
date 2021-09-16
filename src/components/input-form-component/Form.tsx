@@ -13,7 +13,7 @@ const Form = (props: {
   state: { pokemons: { pokemonSecondary: string[] } };
   isHamburguerActive: boolean;
   isSeachActive: boolean;
-}) => {
+}):JSX.Element => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
   const getInput = (inputEvent: { target: { value?: string | unknown } }) => {

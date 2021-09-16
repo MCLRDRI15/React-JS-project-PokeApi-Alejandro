@@ -8,7 +8,7 @@ const Charts: FunctionComponent<ChartProps> = ({
   bases,
   name,
   color,
-}) => {
+}):JSX.Element => {
   const chartRef = React.useRef() as React.MutableRefObject<HTMLCanvasElement>;
 
   useEffect(() => {

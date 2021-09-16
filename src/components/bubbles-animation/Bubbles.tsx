@@ -2,7 +2,7 @@
 import React from "react";
 import "./Bubbles.module.css";
 
-export function Bubbles(){
+export function Bubbles():JSX.Element{
   const numbers: string[] = [
     "one",
     "two",
