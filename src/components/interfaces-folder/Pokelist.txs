@@ -1,0 +1,11 @@
+interface pokemons {
+  name: string;
+  url: string;
+}
+
+interface Props {
+  pokemonsList: pokemons[];
+  fetchRequest: Function;
+  handlerFetch: Function;
+  counter: number;
+}

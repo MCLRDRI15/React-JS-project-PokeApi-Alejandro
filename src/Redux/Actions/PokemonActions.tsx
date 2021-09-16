@@ -1,5 +1,6 @@
 
 import { POKEAPI } from "../../pages";
+import {pokemonSecondary} from "../../components/interfaces-folder/Actions";
 
 /* Actions for consume the API */
 export const FETCH_POKEMONS_REQUEST = "FETCH_POKEMONS_REQUEST";
@@ -19,7 +20,7 @@ export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 export const fetchRequest =
   (counter: Number) =>
   (
-    dispatch: (arg0: {
+    dispatch: (parameter: {
       type: string;
       payload?: { pokemons: string[] } | { error: string };
     }) => void
@@ -49,9 +50,9 @@ export const fetchRequest =
 
 /* function that handle the number of pokemons in the list which are called from the API */
 export const handlerFetch =
-  (pokemonsInList: Number) =>
+  (pokemonsInList: sumber) => 
   (
-    dispatch: (arg0: { type: string; payload: { counter: Number } }) => void
+    dispatch: (parameter: { type: string; payload: { counter: sumber } }) => void
   ) => {
     dispatch({
       type: HANDLER_POKEMONS_FETCH,
@@ -70,7 +71,7 @@ export const addSelectedPokemon =
     pokemonDescriptionUrl: RequestInfo
   ) =>
   (
-    dispatch: (arg0: {
+    dispatch: (parameter: {
       type: string;
       payload:
         | {
@@ -122,7 +123,7 @@ export const addSelectedPokemon =
 export const cleanSelectedPokemons =
   () =>
   (
-    dispatch: (arg0: { type: string; payload: { pokemons: String[] } }) => void
+    dispatch: (parameter: { type: string; payload: { pokemons: string[] } }) => void
   ) => {
     dispatch({
       type: CLEAN_SELECTED_POKEMON,
@@ -136,7 +137,7 @@ export const cleanSelectedPokemons =
 export const setComparisonChart =
   (showChart: boolean) =>
   (
-    dispatch: (arg0: {
+    dispatch: (parameter: {
       type: string;
       payload: { actualState: boolean };
     }) => void
@@ -150,11 +151,6 @@ export const setComparisonChart =
   };
 
 /* This function search for a pokemon that is in the list  */
-interface pokemonSecondary {
-  name: string;
-  url: string;
-}
-
 export const addSearch = (
   search: string | string,
   pokemonsArrayIn: pokemonSecondary[]
@@ -172,7 +168,7 @@ export const addSearch = (
 export const returnToList =
   (pokemonSecondary: string[]) =>
   (
-    dispatch: (arg0: {
+    dispatch: (parameter: {
       type: string;
       payload: { pokemonSecondary: string[] };
     }) => void

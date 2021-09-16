@@ -4,35 +4,7 @@ import { connect } from "react-redux";
 import { setShow } from "../../redux/actions/SingleView";
 import { addSelectedPokemon } from "../../redux/actions/PokemonActions";
 import { POKEAPI, IMAGES_FOLDER } from "../../pages";
-
-interface pokemons {
-  name: string;
-  imageIndex: number;
-  image: string;
-}
-
-interface url {
-  url: string;
-}
-
-interface imageURL {
-  imageUrl: string;
-}
-
-interface addSelectedPokemons {
-  information: pokemons;
-  url: url;
-  image: imageURL;
-}
-
-interface Props {
-  name: string;
-  imageIndex: string;
-  setShow: boolean | unknown;
-  addSelectedPokemon: addSelectedPokemons | unknown;
-  singleViewState: boolean;
-  url: string;
-}
+import {Props} from "../components/interfaces-folder/PokeCards";
 
 const PokemonCard: React.FC<Props> = ({
   name,
@@ -83,12 +55,12 @@ const mapStateToProps = (state: { singleView: { showWindow: boolean } }) => {
 };
 
 const mapDispatchToProps = (
-  dispatch: (arg0: {
+  dispatch: (parameter: {
     (
-      dispatch: (arg0: { type: string; payload: { oldState: boolean } }) => void
+      dispatch: (parameter: { type: string; payload: { oldState: boolean } }) => void
     ): void;
     (
-      dispatch: (arg0: {
+      dispatch: (parameter: {
         type: string;
         payload:
           | {
@@ -99,7 +71,7 @@ const mapDispatchToProps = (
           | { error: string };
       }) => void
     ): void;
-  }) => any
+  }) => void
 ) => {
   return {
     setShow: (oldState: boolean) => dispatch(setShow(oldState)),

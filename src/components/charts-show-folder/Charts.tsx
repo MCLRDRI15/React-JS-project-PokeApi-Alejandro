@@ -1,13 +1,7 @@
 
 import React, { FunctionComponent, useEffect, useRef } from "react";
 import Chart from "chart.js";
-
-type ChartProps = {
-  stats: string[];
-  bases?: number[];
-  name: string;
-  color: string;
-};
+import {ChartProps} from "../interfaces-folder/SingleChart"
 
 const Charts: FunctionComponent<ChartProps> = ({
   stats,
@@ -18,7 +12,7 @@ const Charts: FunctionComponent<ChartProps> = ({
   const chartRef = React.useRef() as React.MutableRefObject<HTMLCanvasElement>;
 
   useEffect(() => {
-    const ctx: any = chartRef.current.getContext("2d");
+    const ctx: string = chartRef.current.getContext("2d");
     new Chart(ctx, {
       type: "bar",
       data: {

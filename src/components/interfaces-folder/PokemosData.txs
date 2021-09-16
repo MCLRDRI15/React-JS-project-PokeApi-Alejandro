@@ -1,0 +1,8 @@
+import {pokemons} from "./Compare"
+
+interface Props {
+  keepPokemon: VoidFunction;
+  pokemonInPokeball: pokemons[];
+  singleView: boolean;
+  cleanPokemonArray: VoidFunction;
+}

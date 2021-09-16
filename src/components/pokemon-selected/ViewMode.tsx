@@ -6,45 +6,17 @@ import { setShow } from "../../redux/actions/SingleView";
 import { cleanSelectedPokemons } from "../../redux/actions/PokemonActions";
 import { setComparisonChart } from "../../redux/actions/PokemonActions";
 import ShowPokemonCompare from "./ShowPokemonCompare";
+import {Props} from "../components/interfaces-folder/ViewMode";
 
-interface pokemons {
-  image: string;
-  flavor_text_entries: {
-    flavor_text:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined;
-  }[];
-  height: number;
-  weight: number;
-  abilities: string[];
-  gender: number;
-  types: string[];
-  stats: string[];
-  name: string;
-  color: { name: string };
-}
 
-interface Props {
-  setShow: Function;
-  viewState: boolean;
-  pokemonInPokeball: pokemons[];
-  cleanSelectedPokemons: VoidFunction;
-  setComparisonChart: VoidFunction;
-  showChart: boolean;
-}
-
-const ViewMode = ({
+const ViewMode: React.FC<Props> = ({
   setShow,
   viewState,
   pokemonInPokeball,
   cleanSelectedPokemons,
   setComparisonChart,
   showChart,
-}: Props) => {
+}) => {
   const cleanPokemonArray = (): void => {
     setShow ? viewState : Boolean;
     cleanSelectedPokemons();
@@ -90,21 +62,21 @@ const mapStateToProps = (state: {
 };
 
 const mapDispatchToProps = (
-  dispatch: (arg0: {
+  dispatch: (parameter: {
     (
-      dispatch: (arg0: {
+      dispatch: (parameter: {
         type: string;
         payload: { oldState?: boolean };
       }) => void
     ): void;
     (
-      dispatch: (arg0: {
+      dispatch: (parameter: {
         type: string;
-        payload: { pokemons: String[] };
+        payload: { pokemons: string[] };
       }) => void
     ): void;
     (
-      dispatch: (arg0: {
+      dispatch: (parameter: {
         type: string;
         payload: { actualState: boolean };
       }) => void

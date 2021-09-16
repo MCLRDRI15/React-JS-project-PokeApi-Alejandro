@@ -3,41 +3,15 @@ import React from "react";
 import Charts from "../charts-show-folder/Charts";
 import { FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from "react-scrolllock";
+import {Props} from "../components/interfaces-folder/PokemosData";
 
-interface pokemons {
-  image: string;
-  flavor_text_entries: {
-    flavor_text:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined;
-  }[];
-  height: number;
-  weight: number;
-  gender: number;
-  abilities: string[];
-  types: string[];
-  stats: string[];
-  name: string;
-  color: { name: string };
-}
 
-interface Props {
-  keepPokemon: VoidFunction;
-  pokemonInPokeball: pokemons[];
-  singleView: boolean;
-  cleanPokemonArray: VoidFunction;
-}
-
-const ShowPokemonData = ({
+const ShowPokemonData: React.FC<Props> = ({
   keepPokemon,
   pokemonInPokeball,
   singleView,
   cleanPokemonArray,
-}: Props) => {
+}) => {
   return (
     <div
       className={
@@ -49,7 +23,7 @@ const ShowPokemonData = ({
       <ScrollLock isActive={singleView}>
         <div className="w-11/12 laptop:w-4/12 mobile:w-7/12 tablet:w-6/12  p-4 overflow-auto cursor-auto border-2 border-gray-900 rounded-xl mt-4 mb-16 mr-auto ml-auto bg-yellow-yellowInput ">
           <div className="p-2 w-full relative border-b border-gray-900">
-            {pokemonInPokeball.map((pokemon: { name: String }, index = 1) => {
+            {pokemonInPokeball.map((pokemon: { name: string }, index = 1) => {
               return (
                 <div
                   key={index + Math.random()}

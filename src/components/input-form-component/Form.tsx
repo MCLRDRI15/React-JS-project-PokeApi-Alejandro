@@ -1,5 +1,5 @@
 
-import React, { useRef, useState } from "react";
+import React, {useRef, useState } from "react";
 import { connect, RootStateOrAny } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
@@ -10,13 +10,13 @@ import tittle from "../img-folder/tittle.png";
 
 const Form = (props: {
   addSearch: (arg0: string, arg1: string[]) => void;
-  state: { pokemons: { pokemonSecondary: String[] } };
+  state: { pokemons: { pokemonSecondary: string[] } };
   isHamburguerActive: boolean;
   isSeachActive: boolean;
 }) => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
-  const getInput = (inputEvent: { target: { value?: String | unknown } }) => {
+  const getInput = (inputEvent: { target: { value?: string | unknown } }) => {
     props.addSearch(
       inputEvent.target.value,
       props.state.pokemons.pokemonSecondary
@@ -103,13 +103,13 @@ const mapStateToProps = (state: RootStateOrAny) => {
 };
 
 const mapDispatchToProps = (
-  dispatch: (arg0: {
+  dispatch: (parameter: {
     type: string;
     payload?: { search: string; pokemonSecondary: string[] };
   }) => void
 ) => {
   return {
-    addSearch: (search: string, pokemonSecondary: string[]) =>
+    addSearch: (search: string, pokemonSecondary: string[]) => 
       dispatch(addSearch(search, pokemonSecondary)),
   };
 };

@@ -1,0 +1,4 @@
+interface pokemonSecondary {
+  name: string;
+  url: string;
+}

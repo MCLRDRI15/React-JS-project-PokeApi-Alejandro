@@ -1,0 +1,25 @@
+interface pokemons {
+  image: string;
+  flavor_text_entries: {
+    flavor_text:
+      | boolean
+      | React.ReactChild
+      | React.ReactFragment
+      | React.ReactPortal
+      | null
+      | undefined;
+  }[];
+  height: number;
+  weight: number;
+  abilities: string[];
+  gender: number;
+  types: string[];
+  stats: string[];
+  name?: string;
+  color: { name: string };
+}
+
+interface Props {
+  pokemonInPokeball: pokemons[];
+  showChart: boolean;
+}

@@ -3,39 +3,13 @@ import React from "react";
 import DobleCharts from "../charts-show-compare-folder/ChartsCompare";
 import { FaSkullCrossbones } from "react-icons/fa";
 import ScrollLock from "react-scrolllock";
+import {Props} from "../components/interfaces-folder/ShowCompare";
 
-interface pokemons {
-  image: string;
-  flavor_text_entries: {
-    flavor_text:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined;
-  }[];
-  height: number;
-  weight: number;
-  abilities: string[];
-  gender: number;
-  types: string[];
-  stats: string[];
-  name: string;
-  color: { name: string };
-}
-
-interface Props {
-  pokemonInPokeball: Array<pokemons>;
-  viewState: boolean;
-  cleanPokemonArray: VoidFunction;
-}
-
-const ShowPokemonCompare = ({
+const ShowPokemonCompare: React.FC<Props> = ({
   pokemonInPokeball,
   viewState,
   cleanPokemonArray,
-}: Props) => (
+}) => (
   <div
     className={
       viewState

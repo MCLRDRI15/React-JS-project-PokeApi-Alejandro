@@ -5,25 +5,14 @@ import { fetchRequest, handlerFetch } from "../../redux/actions/PokemonActions";
 import PokemonCard from "../pokemons-cards/PokeCards";
 import ViewMode from "../pokemon-selected/ViewMode";
 import Form from "../input-form-component/Form";
+import {Props} from "../components/interfaces-folder/PokeList";
 
-interface pokemons {
-  name: string;
-  url: string;
-}
-
-interface Props {
-  pokemonsList: pokemons[];
-  fetchRequest: Function;
-  handlerFetch: Function;
-  counter: number;
-}
-
-const pokelist = ({
+const pokelist: React.FC<Props> = ({
   pokemonsList,
   fetchRequest,
   handlerFetch,
   counter,
-}: Props) => {
+}) => {
   useEffect(() => {
     fetchRequest(counter);
   }, [fetchRequest, counter]);
@@ -60,7 +49,7 @@ const pokelist = ({
 };
 
 const mapStateToProps = (state: {
-  pokemons: { counter: Number; pokemonsList: pokemons[] };
+  pokemons: { counter: number; pokemonsList: pokemons[] };
 }) => {
   return {
     counter: state.pokemons.counter,
@@ -69,17 +58,17 @@ const mapStateToProps = (state: {
 };
 
 const mapDispatchToProps = (
-  dispatch: (arg0: {
+  dispatch: (parameter: {
     (
-      dispatch: (arg0: {
+      dispatch: (parameter: {
         type: string;
         payload?: { pokemons: string[] } | { error: string } | undefined;
       }) => void
     ): void;
     (
-      dispatch: (arg0: { type: string; payload: { counter: Number } }) => void
+      dispatch: (parameter: { type: string; payload: { counter: number } }) => void
     ): void;
-  }) => any
+  }) => void
 ) => {
   return {
     fetchRequest: (url: number) => dispatch(fetchRequest(url)),

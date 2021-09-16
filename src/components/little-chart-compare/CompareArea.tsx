@@ -1,34 +1,9 @@
 
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import {Props} from "../components/interfaces-folder/Compare";
 
-interface pokemons {
-  image: string;
-  flavor_text_entries: {
-    flavor_text:
-      | boolean
-      | React.ReactChild
-      | React.ReactFragment
-      | React.ReactPortal
-      | null
-      | undefined;
-  }[];
-  height: number;
-  weight: number;
-  abilities: string[];
-  gender: number;
-  types: string[];
-  stats: string[];
-  name?: string;
-  color: { name: string };
-}
-
-interface Props {
-  pokemonInPokeball: pokemons[];
-  showChart: boolean;
-}
-
-const ToastComponent = ({ pokemonInPokeball, showChart }: Props) => {
+const ToastComponent: React.FC<Props> = ({ pokemonInPokeball, showChart }) => {
   const [pokemonName, setPokemonName] = useState();
 
   useEffect(() => {
@@ -50,7 +25,7 @@ const ToastComponent = ({ pokemonInPokeball, showChart }: Props) => {
 };
 
 const mapStateToProps = (state: {
-  pokemons: { pokemonInPokeball: String[]; showChart: boolean };
+  pokemons: { pokemonInPokeball: string[]; showChart: boolean };
 }) => {
   return {
     pokemonInPokeball: state.pokemons.pokemonInPokeball,
