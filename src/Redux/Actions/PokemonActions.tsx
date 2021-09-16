@@ -18,7 +18,7 @@ export const RETURN_TO_ORIGINAL_LIST = "RETURN_TO_ORIGINAL_LIST";
 
 /* Function that brings pokemons data from API URL */
 export const fetchRequest =
-  (counter: Number) =>
+  (counter: number) =>
   (
     dispatch: (parameter: {
       type: string;
@@ -50,9 +50,9 @@ export const fetchRequest =
 
 /* function that handle the number of pokemons in the list which are called from the API */
 export const handlerFetch =
-  (pokemonsInList: sumber) => 
+  (pokemonsInList: number) => 
   (
-    dispatch: (parameter: { type: string; payload: { counter: sumber } }) => void
+    dispatch: (parameter: { type: string; payload: { counter: number } }) => void
   ) => {
     dispatch({
       type: HANDLER_POKEMONS_FETCH,

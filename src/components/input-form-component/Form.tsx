@@ -9,7 +9,7 @@ import CompareArea from "../little-chart-compare/CompareArea";
 import tittle from "../img-folder/tittle.png";
 
 const Form = (props: {
-  addSearch: (arg0: string, arg1: string[]) => void;
+  addSearch: (property: string, arg1: string[]) => void;
   state: { pokemons: { pokemonSecondary: string[] } };
   isHamburguerActive: boolean;
   isSeachActive: boolean;
