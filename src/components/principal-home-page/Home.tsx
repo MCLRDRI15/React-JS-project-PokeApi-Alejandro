@@ -4,7 +4,7 @@ import charizard from "../img-folder/charizard.gif";
 import ivysaur from "../img-folder/ivysaur.gif";
 import Form from "../input-form-component/Form";
 
-const Home = () => {
+const Home = ():JSX.Element => {
   return (
     <div>
       <Form isSeachActive={false} isHamburguerActive={false} />

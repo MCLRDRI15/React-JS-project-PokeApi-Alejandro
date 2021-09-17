@@ -12,7 +12,7 @@ const pokelist: React.FC<Props> = ({
   fetchRequest,
   handlerFetch,
   counter,
-}) => {
+}):JSX.Element => {
   useEffect(() => {
     fetchRequest(counter);
   }, [fetchRequest, counter]);

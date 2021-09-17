@@ -16,7 +16,7 @@ const Form = (props: {
 }):JSX.Element => {
   const input = useRef();
   let [hamburguerState, hamburguerStylesHandler] = useState(false);
-  const getInput = (inputEvent: { target: { value?: string | unknown } }) => {
+  const getInput = (inputEvent: { target: { value?: string} }) => {
     props.addSearch(
       inputEvent.target.value,
       props.state.pokemons.pokemonSecondary

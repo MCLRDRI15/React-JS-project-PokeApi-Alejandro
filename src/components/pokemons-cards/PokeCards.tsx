@@ -13,7 +13,7 @@ const PokemonCard: React.FC<Props> = ({
   addSelectedPokemon,
   singleViewState,
   url,
-}) => {
+}):JSX.Element => {
   const imageURL = `${IMAGES_FOLDER}${imageIndex}.png`;
 
   const addPokemonModelView = () => {
