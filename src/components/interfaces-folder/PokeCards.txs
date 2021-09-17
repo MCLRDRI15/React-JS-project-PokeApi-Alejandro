@@ -1,0 +1,28 @@
+interface pokemons {
+  name: string;
+  imageIndex: number;
+  image: string;
+}
+
+interface url {
+  url: string;
+}
+
+interface imageURL {
+  imageUrl: string;
+}
+
+interface addSelectedPokemons {
+  information: pokemons;
+  url: url;
+  image: imageURL;
+}
+
+interface Props {
+  name: string;
+  imageIndex: string;
+  setShow: boolean;
+  addSelectedPokemon: addSelectedPokemons;
+  singleViewState: boolean;
+  url: string;
+}

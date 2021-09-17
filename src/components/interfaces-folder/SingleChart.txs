@@ -1,0 +1,6 @@
+type ChartProps = {
+  stats: string[];
+  bases?: number[];
+  name: string;
+  color: string;
+};

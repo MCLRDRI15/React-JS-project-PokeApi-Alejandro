@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "typeRoots" : ["node_modules/@types", "src/types"],
+    "lib": [
+      "es5", "es6", "dom", "dom.iterable"
+    ],
+    "target": "es6",     
+
+    /* Modules */
+    "module": "commonjs",                               
+    "allowJs": true,                                 
+    "downlevelIteration": true,                       
+    "esModuleInterop": true,                             
+    "forceConsistentCasingInFileNames": true,           
+
+    /* Type Checking */
+    "strict": true,                              
+    "skipLibCheck": true                      
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/components/img-folder/index.d.ts",
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src"  
+  ]
+}

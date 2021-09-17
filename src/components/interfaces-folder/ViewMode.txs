@@ -1,0 +1,10 @@
+import {pokemons} from "./Compare";
+
+interface Props {
+  setShow: Function;
+  viewState: boolean;
+  pokemonInPokeball: pokemons[];
+  cleanSelectedPokemons: VoidFunction;
+  setComparisonChart: VoidFunction;
+  showChart: boolean;
+}
