@@ -21,8 +21,8 @@ interface addSelectedPokemons {
 interface Props {
   name: string;
   imageIndex: string;
-  setShow: boolean | unknown;
-  addSelectedPokemon: addSelectedPokemons | unknown;
+  setShow: boolean;
+  addSelectedPokemon: addSelectedPokemons;
   singleViewState: boolean;
   url: string;
 }
